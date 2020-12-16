@@ -1,0 +1,13 @@
+import {useState} from 'react';
+
+
+const useValue = () => {
+
+  const [val, setVal] = useState(0);
+
+  return {
+    val, 
+    setVal
+  }
+}
+export default useValue;

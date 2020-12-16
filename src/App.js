@@ -1,25 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { Provider, connect, ReactReduxContext } from 'react-redux';
+import { incrementVal } from './actions/buttonActions';
 
+const Button = () => {
+  return (<button onClick={incrementVal}> I AM BUTTON</button>);
+};
 function App() {
+  const [val, setVal] = useState(0);
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button />
+      <ReactReduxContext.Consumer>
+        <div>
+          {({ store }) => store}
+        </div>
+      </ReactReduxContext.Consumer>
+
     </div>
   );
 }
 
-export default App;
+export default connect(state => state.button, null)(App);

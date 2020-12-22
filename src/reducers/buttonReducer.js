@@ -1,11 +1,15 @@
 
 
-export const buttonReducer = (state = {}, action) => {
-  switch(action.type) {
+export const buttonReducer = (state = 0, action) => {
+  switch (action.type) {
     case 'INCREMENT': {
-      return {button: state.button + 1}
+      return state + 1;
     }
+    case "DECREMENT": {
+      return state - 1;
+    }
+
     default:
-      return state
+      return state;
   }
-}
+};

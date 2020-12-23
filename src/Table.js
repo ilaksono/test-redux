@@ -1,9 +1,9 @@
-import * as Actions from './actions';
+import * as Actions from './actions/buttonActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import store from './store';
 const Table = ({ state, actions }) => {
-
+  const s = store.getState();
 
   return (
     <div>
@@ -15,8 +15,9 @@ const Table = ({ state, actions }) => {
           <td>
             <button
               onClick={() =>
-                store.dispatch(actions.increment())}
-            >{state.button}</button>
+                store.dispatch(actions.increment())
+              }
+            >{s.button.value}</button>
           </td>
         </tr>
       </table>

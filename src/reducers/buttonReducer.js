@@ -1,15 +1,16 @@
+const initState = {
+  value: 0
+};
 
-
-export const buttonReducer = (state = 0, action) => {
+const buttonReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'INCREMENT': {
-      return state + 1;
-    }
-    case "DECREMENT": {
-      return state - 1;
-    }
-
+    case "INCREMENT":
+      return { value: state.value + 1 };
+    case "DECREMENT":
+      return { value: state.value + 1 };
     default:
       return state;
   }
 };
+
+export default buttonReducer;

@@ -1,8 +1,13 @@
-const INCREMENT ='INCREMENT'
+const INC = 'INCREMENT';
+const DEC = 'DECREMENT';
 
-export const incrementVal = () => dispatch => {
-  dispatch({
-    type: INCREMENT,
-    payload: 'increment it'
-  })
-}
+const increment = () =>
+  ({ type: INC });
+  
+const decrement = () =>
+  ({ type: DEC });
+
+export {
+  increment,
+  decrement
+};

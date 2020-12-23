@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { buttonReducer } from './reducers/buttonReducer';
-
+import {increment, decrement} from './actions';
 const initialState = {};
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
 const rootReducer = combineReducers({
@@ -14,8 +14,7 @@ const store = createStore(rootReducer,
 
 store.subscribe(() => console.log(store.getState()));
 
-export const increment = () => ({type:'INCREMENT'})
-export const decrement = () => ({type:'DECREMENT'})
+
 store.dispatch(increment());
 store.dispatch(decrement());
 store.dispatch(decrement());

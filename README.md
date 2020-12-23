@@ -1,2 +1,2 @@
-## A redux create store with reducer test
+## A comparison between Redux and useContext + useReducer
 
